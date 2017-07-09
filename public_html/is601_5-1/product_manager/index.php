@@ -56,4 +56,18 @@ else if ($action == 'list_categories') {
 $categories = get_categories();
 include('category_list.php');
 }
+else if ($action == 'show_add_category_form'){
+include('category_add.php');
+}
+else if ($action == 'add_category'){
+$categoryName = filter_input(INPUT_POST, 'categoryName');
+if ($categoryName == NULL || $categoryName == FALSE) {
+$error = "Invalid category data. Enter data in category field.";
+include('../errors/error.php');
+}
+else{
+add_category($categoryName);
+header("Location: .?action=list_categories");
+}
+}
 ?>
