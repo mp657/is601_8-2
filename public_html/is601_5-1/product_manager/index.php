@@ -66,7 +66,20 @@ $error = "Invalid category data. Enter data in category field.";
 include('../errors/error.php');
 }
 else{
+
 add_category($categoryName);
+header("Location: .?action=list_categories");
+}
+}
+else if ($action == 'delete_category') {
+$categoryID = filter_input(INPUT_POST, 'categoryID');
+if($categoryID == NULL || $categoryID == FALSE){
+$error = "Category id missing.";
+include('../errors/error.php');
+}
+else 
+{
+delete_category($categoryID);
 header("Location: .?action=list_categories");
 }
 }
