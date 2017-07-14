@@ -9,6 +9,12 @@
 	}else{
 	$heard = $heard_from;
 	}
+    if(!isset($_POST['wants_updates'])){
+        $wants = "NO";
+	}else{
+	$wants = "YES";
+        }
+    $contact_via = filter_input(INPUT_POST, 'contact_via');
   // get the rest of the data for the form
 
     // for the heard_from radio buttons,
@@ -40,10 +46,10 @@
         <span><?php echo htmlspecialchars($heard); ?></span><br>
 
         <label>Send Updates:</label>
-        <span></span><br>
+        <span><?php echo htmlspecialchars($wants); ?></span><br>
 
         <label>Contact Via:</label>
-        <span></span><br><br>
+        <span><?php echo htmlspecialchars($contact_via); ?></span><br><br>
 
         <span>Comments:</span><br>
         <span></span><br>        
