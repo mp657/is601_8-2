@@ -36,6 +36,10 @@ switch ($action) {
         foreach ($scores as $s) {
             $scores_string .= $s . '|';
         }
+	foreach ($scores as $s) {
+	    $score_total += $s;
+	}
+
         $scores_string = substr($scores_string, 0, strlen($scores_string)-1);
 
         // calculate the average
