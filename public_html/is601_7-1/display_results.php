@@ -1,7 +1,7 @@
 <?php
     // get the data from the form
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-
+    $password = filter_input(INPUT_POST, 'password');
     // get the rest of the data for the form
 
     // for the heard_from radio buttons,
@@ -24,7 +24,7 @@
         <span><?php echo htmlspecialchars($email); ?></span><br>
 
         <label>Password:</label>
-        <span><!-- add PHP code here--></span><br>
+        <span><?php echo htmlspecialchars($password); ?></span><br>
 
         <label>Phone Number:</label>
         <span></span><br>
