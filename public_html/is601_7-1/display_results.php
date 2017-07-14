@@ -15,6 +15,7 @@
 	$wants = "YES";
         }
     $contact_via = filter_input(INPUT_POST, 'contact_via');
+    $comments = filter_input(INPUT_POST, 'comments');
   // get the rest of the data for the form
 
     // for the heard_from radio buttons,
@@ -52,7 +53,7 @@
         <span><?php echo htmlspecialchars($contact_via); ?></span><br><br>
 
         <span>Comments:</span><br>
-        <span></span><br>        
+        <span><?php echo nl2br($comments); ?></span><br>        
     </main>
 </body>
 </html>
